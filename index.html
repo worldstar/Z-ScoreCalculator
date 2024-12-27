@@ -104,6 +104,13 @@
             </table>
         </div>
     </div>
+
+    <!-- Visitor Counter -->
+    <div class="row mt-4">
+        <div class="col-md-12 text-center">
+            <h5>Visitor Count: <span id="counter">Loading...</span></h5>
+        </div>
+    </div>    
 </div>
 
 <!-- Bootstrap JS & jQuery -->
@@ -111,6 +118,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
+    // Fetch and display visitor count using CountAPI
+    fetch('https://api.countapi.xyz/hit/worldstar.github.io/Z-ScoreCalculator')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('counter').innerText = data.value;
+      })
+      .catch(err => {
+        console.error('Counter loading failed:', err);
+        document.getElementById('counter').innerText = 'Unavailable';
+      });
+    
     function calculateBMI() {
         const weight = parseFloat(document.getElementById('weight').value);
         const heightcm = parseFloat(document.getElementById('height').value);
