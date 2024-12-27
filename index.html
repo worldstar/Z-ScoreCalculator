@@ -119,15 +119,18 @@
 
 <script>
     // Fetch and display visitor count using CountAPI
-    fetch('https://api.countapi.xyz/hit/worldstar.github.io/visits')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('counter').innerText = data.value;
-      })
-      .catch(err => {
-        console.error('Counter loading failed:', err);
-        document.getElementById('counter').innerText = 'Unavailable';
-      });
+    // fetch('https://api.countapi.xyz/hit/worldstar.github.io/visits')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     document.getElementById('counter').innerText = data.value;
+    //   })
+    //   .catch(err => {
+    //     console.error('Counter loading failed:', err);
+    //     document.getElementById('counter').innerText = 'Unavailable';
+    //   });
+    $.getJSON("https://api.countapi.xyz/hit/worldstar.github.io/visits", function(response) {
+        $("#counter").text(response.value);
+    });
     
     function calculateBMI() {
         const weight = parseFloat(document.getElementById('weight').value);
