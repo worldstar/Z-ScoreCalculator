@@ -108,9 +108,9 @@
     <!-- Visitor Counter -->
     <div class="row mt-4">
         <div class="col-md-12 text-center">
-            <h5>Visitor Count: <span id="counter">Loading...</span></h5>
             <!-- hitwebcounter Code START -->
-            <img src="https://hitwebcounter.com/counter/counter.php?page=18140668&style=0001&nbdigits=4&type=page&initCount=0" title="Counter Widget" Alt="Visit counter"   border="0" /></a>              
+            <h5>Visitor Count: <span id="counter"><img src="https://hitwebcounter.com/counter/counter.php?page=18140668&style=0001&nbdigits=4&type=page&initCount=0" title="Counter Widget" Alt="Visit counter"   border="0" /></span></h5>            
+            </a>              
         </div>
     </div>    
 </div>
@@ -119,21 +119,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    // Fetch and display visitor count using CountAPI
-    // fetch('https://api.countapi.xyz/hit/worldstar.github.io/visits')
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     document.getElementById('counter').innerText = data.value;
-    //   })
-    //   .catch(err => {
-    //     console.error('Counter loading failed:', err);
-    //     document.getElementById('counter').innerText = 'Unavailable';
-    //   });
-    $.getJSON("https://api.countapi.xyz/hit/worldstar.github.io/visits", function(response) {
-        $("#counter").text(response.value);
-    });
-    
+<script>    
     function calculateBMI() {
         const weight = parseFloat(document.getElementById('weight').value);
         const heightcm = parseFloat(document.getElementById('height').value);
